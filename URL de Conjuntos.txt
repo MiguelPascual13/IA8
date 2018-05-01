@@ -1,0 +1,3 @@
+
+Conjunto del clustering Ausencias de trabajadores
+http://archive.ics.uci.edu/ml/datasets/Absenteeism+at+work

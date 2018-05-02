@@ -40,7 +40,14 @@
 \item Tiempo de ausencia en horas: número real.
 \end{enumerate}
 	\section{Parametrización del algoritmo de agrupamiento}
+	Veamos ahora como preparamos los datos y las variables para aplicar el algoritmo de agrupamiento jerárquico.
 	
+	Empecemos primero observando si tiene sentido o no estandarizar o normalizar o no hacerlas nada a las variables. Dado que algunas de ellas a pesar de que son números, realmente se les deberían considerar enumerados, por ejemplo el ID, el motivo de la ausencia, el día laboral, la estación del año, la incidencia disciplinaria, y el bebedor y fumador social; y por tanto al tener que considerarlas así, no tendría ningún sentido realizarles ajuste numérico.
+	
+	Fijemonos ahora en el resto de las variables,   AQUI FALTA DECIR PORQUE LAS OTRAS VARIABLES NO LAS ESTANDARIZAMOS NI NORMALIZAMOS PERO NO SE ARGUMENTAR PORQUE (PORQUE LA RAZON QUE SE ME OCURRE ES PURA "PEREZA").
+	
+	Decidamos ahora el número de clusters que queremos para nuestro agrupamiento, para ello tenemos que observar que dependiendo de que variable tomamos como principal, se necesitará un número o otro, por ejemplo si cogemos como variable, el día laboral, lo interesante sería tomar como número de clusters igual a 5, para observar como el algoritmo te agrupa por cada día laboral o por ejemplo por el motivo de la ausencia, o la estación del año, etc.
+	Por todo esto, hemos decidido optar por 
 	\section{Resultados}
 	\section{Conclusiones y respuestas}
 	\chapter{Clasificación}

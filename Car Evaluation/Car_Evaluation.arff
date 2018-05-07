@@ -6,7 +6,7 @@
 @attribute Persons {2, 4, more}
 @attribute Lug_Boot {small, med, big}
 @attribute Safety {low, med, high}
-@attribute Type_of_Car {unacc, acc, good, vgood}
+@attribute Type_of_Car_Acceptability {unacc, acc, good, vgood}
 
 @data
 vhigh,vhigh,2,2,small,low,unacc

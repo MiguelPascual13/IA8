@@ -42,7 +42,7 @@
 	\section{Parametrización del algoritmo de agrupamiento}
 	Veamos ahora como preparamos los datos y las variables para aplicar el algoritmo de agrupamiento jerárquico.
 	
-	Empecemos primero observando si tiene sentido o no estandarizar o normalizar o no hacerlas nada a las variables. Dado que algunas de ellas a pesar de que son números, realmente se les deberían considerar enumerados, por ejemplo el ID, el motivo de la ausencia, el día laboral, la estación del año, la incidencia disciplinaria, y el bebedor y fumador social; y por tanto al tener que considerarlas así, no tendría ningún sentido realizarles ajuste numérico.
+	Empecemos primero observando si tiene sentido o no estandarizar o normalizar o no hacerlas nada a las variables. Dado que algunas de ellas a pesar de que son números, realmente se les deberían considerar variables categóricas, por ejemplo el ID, el motivo de la ausencia, el día laboral, la estación del año, la incidencia disciplinaria, y el bebedor y fumador social; y por tanto al tener que considerarlas así, no tendría ningún sentido realizarles ajuste numérico.
 	
 	Fijemonos ahora en el resto de las variables,   AQUI FALTA DECIR PORQUE LAS OTRAS VARIABLES NO LAS ESTANDARIZAMOS NI NORMALIZAMOS PERO NO SE ARGUMENTAR PORQUE (PORQUE LA RAZON QUE SE ME OCURRE ES PURA "PEREZA").
 	
@@ -52,15 +52,38 @@
 	\section{Conclusiones y respuestas}
 	\chapter{Clasificación}
 		\section{Descripción del conjunto}
-		Para este tipo de problema, lo interesante es coger un conjunto/database que tenga pocos atributos y muchas instancias, por ello el conjunto que hemos seleccionado es un dataset sobre una evaluación de coches, hemos obtenido los datos de la siguiente página \url{http://archive.ics.uci.edu/ml/datasets/Car+Evaluation}.
+		Para este tipo de problema, lo interesante es coger un conjunto/database que tenga pocos atributos y muchas instancias, por ello el conjunto que hemos seleccionado es un dataset sobre una evaluación de coches, hemos obtenido los datos de la siguiente página \url{http://archive.ics.uci.edu/ml/datasets/Car+Evaluation}. Los archivos descargados no venían en formato .arff, por tanto hemos tenido que añadir parte del codigo de definición de atributos y de la relación, pero los datos no han sido modificados.
 		
+		Expliquemos ahora los atributos/variables, todos ellos categóricos, ninguno numérico; de este conjunto de datos:
+	
+	\begin{enumerate}
+\item Compra: Precio de compra; muy alto (vhigh), alto (high), medio (med) y bajo (low).
+\item Mantenimiento: Precio de mantenimiento; muy alto (vhigh), alto (high), medio (med) y bajo (low).
+\item Puertas: Número de puertas clasificado en 4 categorías; 2, 3, 4 y 5 o más.
+\item Personas: Número de personas clasificado en 3 categorías; 2, 4 y más.
+\item Maletero: Capacidad del maletero; pequeña, media y grande.
+\item Seguridad: baja, media y alta. 
+\item Tipo de coche según aceptabilidad: inaceptable (unacc), aceptable (acc), bueno (good) y muy bueno (vgood). 
+\end{enumerate}
+		
+		Una vez comentado los atributos, expliquemos el problema. 
+
+Tal y como son los datos, hemos decidido que para aprovechar el potencial de los mismos, lo más lógico es plantear el problema de clasificar la aceptabilidad de los coches en función de los otros 6 atributos, ya que así podemos observar más adelante el poder del algunos atributos como la seguridad y el número de personas que ya clasifican una cantidad de los coches.
+
+Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad. 
+	METER HISTOGRAMA COMO IMAGEN, LA OBTENEMOS DE WEKA. 
 	\section{Parametrización del J48}
+		Dado que todas nuestras variables son categóricas no se les puede normalizar (englobar los valores entre $0$ y $1$) ni estandarizar (modificar los datos para que tengan media $0$ y varianza $1$). 
+		Primero se realizará una ejecución del algoritmo sin validación ni entrenamiento, después se realizará otra ejecución en validación y entrenamiento al $66\%$.
+		
+		En la primera ejecución se han mantenido los parámetros del algoritmo predeterminado por Weka y en la segunda ejecución...
 	\section{Resultados}
+	AQUÍ HAY QUE PONER LOS ÁRBOLES DE DECISIÓN, LAS IMAGENES, QUE HABRA QUE VER COMO SACARLAS DE WEKA Y METERLAS.
 	\section{Conclusiones y respuestas}
 	\chapter{Regresión}
 		\section{Descripción del conjunto}
-	\section{Parametrización del perceptrón multicapa y del k-NN}
+	\section{Parametrización del perceptrón multicapa}
+	\section{Parametrización del K-NN}
 	\section{Resultados}
 	\section{Conclusiones}
-	\chapter{Ajuste Opcional}
 \end{document}

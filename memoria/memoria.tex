@@ -68,12 +68,12 @@
 		
 		Una vez comentado los atributos, expliquemos el problema. 
 
-Tal y como son los datos, hemos decidido que para aprovechar el potencial de los mismos, lo más lógico es plantear el problema de clasificar la aceptabilidad de los coches en función de los otros 6 atributos, ya que así podemos observar más adelante el poder del algunos atributos como la seguridad y el número de personas que ya clasifican una cantidad de los coches.
+Tal y como son los datos, hemos decidido que para aprovechar el potencial de los mismos, lo más lógico es plantear el problema de clasificar la aceptabilidad de los coches en función de los otros 6 atributos, para así poder observar cuales coches son inaceptables y asi no venderlos o comprarlos; ya que así podemos observar más adelante el poder del algunos atributos como la seguridad y el número de personas que ya clasifican una cantidad considerable de los coches.
 
 Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad. 
 	\begin{figure}
   		\centering
-   		\includegraphics[width=0.7\textwidth]{Imagenes/HistogramaVarSalidaClasif}
+   		\includegraphics[width=1\textwidth]{Imagenes/HistogramaVarSalidaClasif}
   		\caption{Histograma de la variable tipo de coche según aceptabilidad}
   		\label{HistoVarSalidaClasi}
 	\end{figure}
@@ -93,7 +93,7 @@ Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad.
 	
 	\begin{figure}
   		\centering
-   		\includegraphics[width=0.7\textwidth]{Imagenes/ArbolSinEntreNiVal}
+   		\includegraphics[width=1\textwidth]{Imagenes/ArbolSinEntreNiVal}
   		\caption{Árbol Primera Ejecución}
   		\label{ArbolPrimeraEjecucion}
 	\end{figure}
@@ -108,15 +108,34 @@ Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad.
 	
 	\begin{figure}
   		\centering
-   		\includegraphics[width=0.7\textwidth]{Imagenes/ArbolConEntreYValYBinarySplit}
+   		\includegraphics[width=1\textwidth]{Imagenes/ArbolConEntreYValYBinarySplit}
   		\caption{Árbol Primera Ejecución}
   		\label{ArbolSegundaEjecucion}
 	\end{figure}
 	
 	Comentemos ahora los resultados obtenidos en ambas ejecuciones:
 	
+	Como se puede observar en la primera ejecución se produce un árbol más o menos claro, en el que casi todos los nodos tienen $3$ o $4$ hijos, también se observa que el algoritmo le cuesta diferenciar entre los tipos de coches que son aceptables, buenos o muy buenos; tal y como se ve en la matriz de confusión, también se observa que el porcentaje de instancias mal clasificadas es realmente bajo pues es menor de un $5\%$, lo cual es un porcentaje realmente bueno.
+	
+	En la segunda ejecución, decidimos forzar a al árbol para que fuera binario, lo que provoca que se cree un  árbol con mayor profundidad y menos homogéneo que el anterior, pero en cambio al realizar una parte de entrenamiento y validación, el porcentaje de fallos en la clasificación es incluso menor, en unas pocas décimas que en la primera ejecución, y además se observa en la matriz de confusión, ahora la confusión que tenía con los coches buenos y muy buenos ha dejado de tenerla. 
+	
+	En cambio, cabe destacar que a pesar de que la segunda ejecución presenta menos equivocación, la precisión que posee en los coches buenos, es menor que en la primera ejecución, a pesar de que la segunda tiene una precisión global mayor que en la primera ejecución, además de que la segunda parametrización posee una mayor sensibilidad a la hora de concretar en los tipos de coches según aceptabilidad.
 	
 	\section{Conclusiones y respuestas}
+	Por la claridad, y la manera de filtrar que realiza, consideramos que es mejor árbol el de la primera ejecución a pesar de que se confunde en algunas instancias, pero para interpretar el problema, consideramos que se obtiene una interpretación mejor que con la segunda ejecución. Las principales diferencias se encuentran en las ramas iniciales, al ser el primero un árbol con una raíz con mas de dos hijos, hay más claridad y orden en el árbol. 
+	
+	En cambio en términos de validación consideramos que el segundo árbol es más exacto y con mejores estadísticas que la primera ejecución.
+	
+	Interpretemos ahora el primer árbol para responder las preguntas en función del contexto del problema.
+	
+	La raíz del árbol evalúa el atributo de seguridad de un coche, la cual es una de las preguntas mas importantes a la hora de valorar si un coche es aceptable o no, pues un coche seguro es a nuestro punto de vista uno de los vehículos mas peligrosos. Por ello como se puede observar, los coches que mejor ha clasificado y acertado han sido los coches inaceptables (unacc).
+	
+	Como hemos comentado la seguridad ha sido una de las variables mas relevantes en el problema, además de que es el nodo que más poder discriminante tiene, y a pesar de esto en la segunda ejecución no se ha tomado la seguridad en la raíz sino que se ha tomado el número de personas, a pesar de que están en el mismo nivel, lo cual esto se puede deber al algoritmo de selección interno de weka y que al exigirle la distinción binaria, hace que el número de personas tenga un mayor poder discriminante.   
+	
+	En efecto, se puede observar que hay dos variables que se confunden sobretodo entre si que son las dos relacionadas con el precio, buying y maint; a lo largo de todo el árbol pues normalmente, son las clases que menos discriminan y se seleccionan las últimas,y que además están organizados con los mismos valores, muy alto (vhigh), alto (high), medio (med) y bajo (low). Tiene cierto sentido que se confundan pues normalmente un coche que cueste mucho dinero, también va a tener un mantenimiento de coste alto. 
+	
+	Además a nuestro punto de vista, estas dos clases junto con la del tamaño del maletero, son las clases que menos información aportan, pues al final son las que clasifican entre los buenos coches, que si enfocamos este problema simplemente para descartar los coches peligrosos/inaceptables, dichas clases no nos darían información relevante.
+	
 	\chapter{Regresión}
 		\section{Descripción del conjunto}
 	\section{Parametrización del perceptrón multicapa}

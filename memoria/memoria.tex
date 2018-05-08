@@ -11,48 +11,75 @@
 	\tableofcontents
 	\chapter{Agrupamiento}
 	\section{Descripción del conjunto}
-	Para este experimento hemos seleccionado un conjunto de datos llamado ausencias de trabajo. Los datos pertenecen a un estudio académico realizado por la universidad Nove de Julho de Brasil, por dos estudiantes y un profesor, durante tres años desde 2007 hasta 2010 en una empresa brasileña.
-	Los datos, los hemos obtenido de la siguiente pagina, \url{http://archive.ics.uci.edu/ml/datasets/Absenteeism+at+work}.
+	Para este experimento hemos seleccionado un conjunto de datos acerca de las características sobre 3 tipos de semillas diferentes. Los datos pertenecen a un estudio académico realizado por diversos individuos pertenecientes a una de las siguientes instituciones; la universidad de ciencias de la computación y matemáticas de Polonia, la academia de ciencias de Polonia y de la universidad de Tecnología de Polonia.
+	
+	Los datos, los hemos obtenido de la siguiente pagina, \url{http://archive.ics.uci.edu/ml/datasets/seeds}. El archivo descargado no venía en formato .arff, por tanto hemos tenido que añadir parte del codigo de definición de atributos y de la relación, ya que solamente venía con los datos del estudio. Los datos no se han visto alterados por nuestras modificaciones.
 	
 	Expliquemos ahora los atributos/variables de este conjunto de datos:
 	
 	\begin{enumerate}
-\item  ID (Identificador): variable formada por un conjunto de números del 1 al 36 que consisten en 36 identificadores de 36 personas distintas.
-\item Motivo de la ausencia: catalogado en 28 números que cada uno corresponde con un motivo de incidencia, los 21 primeros se tratan de las primeras 21 enfermedades del código internacional de enfermedades (ICD) y los 7 ultimos, corresponden con 7 motivos no incluidos en el ICD, que son el acompañamiento de otro paciente (22), una consulta médica (23), donación de sangre (24), análisis médico (25), ausencia injustificada (26), fisioterapia (27) y dentista (28).
-\item Mes de ausencia: número real que corresponde con el mes de la ausencia del 1 al 12.
-\item Día laboral de la semana: lunes (2), martes (3), miércoles (4), jueves (5) y viernes (6). 
-\item Estación del año: verano (1), otoño (2), invierno (3) y primavera (4).
-\item Gasto de transporte: número real.
-\item Distancia desde casa hasta la oficina (km): número real.
-\item Tiempo de trabajo: número entero.
-\item Edad: número entero
-\item Media de carga de trabajo: número real.
-\item Porcentaje de cumplimento de trabajos: número real entre 0.0 y 100.0.
-\item Incidencia disciplinaria: Si (1) y No (0).
-\item Educación: número real, catalogado de la siguiente manera; bachillerato (1), graduado (2), posgraduado (3) y master y docotorado (4).
-\item Número de hijos: número real.
-\item Bebedor social: Si (1) y No (0).
-\item Fumador social: Si (1) y No (0).
-\item Número de mascotas: número real.
-\item Peso: número real.
-\item Altura: número real.
-\item Índice de masa corporal: número real.
-\item Tiempo de ausencia en horas: número real.
+\item Area: área de la semilla, número real.
+\item Perimeter: perímetro de la semilla, número real.
+\item Compact: compacidad de la semilla se calcula con la siguiente fórmula $C=4*pi*Area/perimeter^2$, número real.
+\item LengthKernel: longitud del centro de la semilla, número real.
+\item Width: anchura del centro de la semilla, número real.
+\item AssymmetryCoefficient: coeficiente de asimetría, número real. 
+\item LengthKernelGrove: longitud del la curvatura del centro de la semilla, número real.
+\item VarietiesOfWheat: variedades de semilla de trigo: 1-Kama, 2-Rosa and 3-Canadian, variable categórica.
 \end{enumerate}
 	\section{Parametrización del algoritmo de agrupamiento}
 	Veamos ahora como preparamos los datos y las variables para aplicar el algoritmo de agrupamiento jerárquico.
 	
-	Empecemos primero observando si tiene sentido o no estandarizar o normalizar o no hacerlas nada a las variables. Dado que algunas de ellas a pesar de que son números, realmente se les deberían considerar variables categóricas, por ejemplo el ID, el motivo de la ausencia, el día laboral, la estación del año, la incidencia disciplinaria, y el bebedor y fumador social; y por tanto al tener que considerarlas así, no tendría ningún sentido realizarles ajuste numérico.
+	Veamos primero si debemos normalizar o estandarizar las variables. Para ello, basta con ver que el algoritmo jerárquico de agrupamiento y observar que manipula distancias, por tanto lo recomendable es normalizar todas las variables numéricas para que así todas ellas trabajen en el mismo rango. En cambio en el caso de estandarizar, no saldría rentable.  
 	
-	Fijemonos ahora en el resto de las variables,   AQUI FALTA DECIR PORQUE LAS OTRAS VARIABLES NO LAS ESTANDARIZAMOS NI NORMALIZAMOS PERO NO SE ARGUMENTAR PORQUE (PORQUE LA RAZON QUE SE ME OCURRE ES PURA "PEREZA").
+	Decidamos ahora el número de clusters que queremos para nuestro agrupamiento, para ello tenemos que observar que dependiendo de que variable tomamos como principal y dado que todas las variables menos una son numéricas y la otra es categórica; se debe coger la categórica como principal al realizar el clustering con la opción de Classes to clusters evaluation, con lo cual el número de clusters óptimo es el mismo que el número de clases tiene la variable categórica, que en este caso es $3$.
 	
-	Decidamos ahora el número de clusters que queremos para nuestro agrupamiento, para ello tenemos que observar que dependiendo de que variable tomamos como principal, se necesitará un número o otro, por ejemplo si cogemos como variable, el día laboral, lo interesante sería tomar como número de clusters igual a 5, para observar como el algoritmo te agrupa por cada día laboral o por ejemplo por el motivo de la ausencia, o la estación del año, etc.
-	Por todo esto, hemos decidido optar por 
-	\section{Resultados}
-	\section{Conclusiones y respuestas}
+	Para elegir el tipo de enlace que se usa en el algoritmo, hemos probado el algoritmo jerárquico con los $3$ posibles enlaces, simple, centrado y completo; y el enlace con el que los resultados del algoritmo salían homogéneos y dignos de estudiar, era con el enlace completo lo cual se debe a que los individuos del conjunto de datos pertenecientes a la misma clase, están muy alejados unos de otros.
+	
+	\section{Resultados, conclusiones y respuestas}
+	Mostremos primero el sumario de weka en la Figura \ref{SumarioClustering}, y después los histogramas de weka en los que hemos añadido una variable llamada cluster, que nos permite observar como estan organizados los clusters a lo largo de todas las variables, (idea obtenida de las recomendaciones y tutoriales de la página de weka); en la Figura \ref{ClusteringHistogramas}.
+
+Comentemos ahora algunos detalles del sumario, se puede observar que el reparto de las instancias entre los clusters, es realmente equitativo, pues dos clusters tienen un $32\%$ de las instancias y el otro tiene el $36\%$ de las instancias, que hacen un total del $100\%$. Además solo se produce un error del $8\%$ en lo que consiste en la asignación de las instancias al correspondiente clusters, ya que observandolo en el sumario vemos que cada clusters corresponde con una tipo de semilla de trigo, el cluster $0$ corresponde con la semilla de tipo $1$, el cluster $1$ con la semilla de tipo $2$ y el cluster $2$ con la semilla de tipo $3$.
+
+Veamos ahora variable por variable, que valores toman en cada cluster, lo cual lo podemos obtener con la ayuda de los histogramas, pues cada cluster, $0$,$1$ y $2$, es un color, azul oscuro, rojo y azul claro.
+
+	Comencemos con el área, en este caso tenemos que los clusters se distribuyen de una manera gradual, ya que las instancias pertenecientes al cluster $2$ están situadas en los valores mas inferiores con unas pocas instancias del cluster $0$, después en los valores medios están las instancias del cluster $0$ con algunas pocas del cluster $1$ y los valores mas altos son todos de instancias pertenecientes al cluster $1$.
+	
+	El perímetro tiene exactamente una distribución equivalente, los del cluster $2$, valores bajos; el cluster $0$, unos pocos valores bajos y la mayoría valores medios; y el cluster $1$, sobretodo valores grandes y unos pocos con valores medios.
+	
+	La compacidad de la semilla está mas distribuida pues el cluster $2$ tiene los valores menores, pero el resto se reparte un poco de manera equitativa entre el cluster $0$ y el $1$, pero predominando más los del cluster $1$ en los valores altos.
+	
+	La longitud del centro tiene la siguiente distribución, el cluster $2$ está junto con el cluster $0$ en los valores mas bajo, y el cluster $1$ ocupa los valores mas altos. 
+	
+	La anchura del centro tiene la misma distribución que el perímetro y el área.
+	
+	Con el coeficiente de simetría se produce el efecto inverso, como si cogieras el histograma y lo pusieras en un espejo, es decir, los clusters $0$ y $1$ ocupan los valores mas bajos, y el cluster $2$ ocupa los valores mas altos, a excepción de dos valores del cluster 0 que están en los valores más altos lo cual se podría deducir que son las dos instancias de la clase $3$ que están colocadas mal en los clusters y en vez de estar en el cluster $2$ están en el $0$.  
+	
+	Y por ultimo la curvatura del centro tiene la misma distribución que la distribución de la longitud del centro.
+
+Ahora queda por comentar la variable que evaluabamos, la variedad del trigo, y asi poder observar que cluster es mas homogeneo y cual tiene mas valores.
+
+Con una cantidad de individuos de $76$, tenemos que el cluster $1$ es el cluster más numeroso a pesar de ser por pocos individuos pues no son mas de $10$ individuos con ninguno de los otros dos clusters.
+
+Además podemos observar que el cluster más homogéneo es el cluster $1$ pues sus individuos solo pertenecen a dos clases la $1$ y la $2$, y además posee casi todos los elementos de la clase $2$. Después el cluster mas inhomogeneo es el cluster $1$ pues esta repartido entre las $3$ clases. 
+
+
+	\begin{figure}
+  		\centering
+   		\includegraphics{Imagenes/SumarioClustering}
+  		\caption{Sumario Clustering/Agrupamiento}
+  		\label{SumarioClustering}
+	\end{figure}	
+	
+	\begin{figure}
+  		\centering
+   		\includegraphics[width=1\textwidth]{Imagenes/Clustering}
+  		\caption{Histogramas Clustering}
+  		\label{ClusteringHistogramas}
+	\end{figure}
 	\chapter{Clasificación}
 		\section{Descripción del conjunto}
-		Para este tipo de problema, lo interesante es coger un conjunto/database que tenga pocos atributos y muchas instancias, por ello el conjunto que hemos seleccionado es un dataset sobre una evaluación de coches, hemos obtenido los datos de la siguiente página \url{http://archive.ics.uci.edu/ml/datasets/Car+Evaluation}. Los archivos descargados no venían en formato .arff, por tanto hemos tenido que añadir parte del codigo de definición de atributos y de la relación, pero los datos no han sido modificados.
+		Para este tipo de problema, lo interesante es coger un conjunto/database que tenga pocos atributos y muchas instancias, por ello el conjunto que hemos seleccionado es un dataset sobre una evaluación de coches, hemos obtenido los datos de la siguiente página \url{http://archive.ics.uci.edu/ml/datasets/Car+Evaluation}. Al igual que en el primer apartado, los archivos descargados no venían en formato .arff, por tanto hemos tenido que añadir parte del codigo de definición de atributos y de la relación, pero los datos no han sido modificados.
 		
 		Expliquemos ahora los atributos/variables, todos ellos categóricos, ninguno numérico; de este conjunto de datos:
 	
@@ -119,7 +146,7 @@ Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad.
 	
 	En la segunda ejecución, decidimos forzar a al árbol para que fuera binario, lo que provoca que se cree un  árbol con mayor profundidad y menos homogéneo que el anterior, pero en cambio al realizar una parte de entrenamiento y validación, el porcentaje de fallos en la clasificación es incluso menor, en unas pocas décimas que en la primera ejecución, y además se observa en la matriz de confusión, ahora la confusión que tenía con los coches buenos y muy buenos ha dejado de tenerla. 
 	
-	En cambio, cabe destacar que a pesar de que la segunda ejecución presenta menos equivocación, la precisión que posee en los coches buenos, es menor que en la primera ejecución, a pesar de que la segunda tiene una precisión global mayor que en la primera ejecución, además de que la segunda parametrización posee una mayor sensibilidad a la hora de concretar en los tipos de coches según aceptabilidad.
+	En cambio, cabe destacar que a pesar de que la segunda ejecución presenta menos equivocación, la precisión que posee en los coches buenos, es menor que en la primera ejecución, a pesar de que la segunda tiene una precisión global mayor que en la primera ejecución, además de que la segunda parametrización posee una mayor sensibilidad a la hora de concretar en los tipos de coches según aceptabilidad y como es un valor alto y cercano a $1$, sabemos que la validación y ambas ejecuciones son fiables.
 	
 	\section{Conclusiones y respuestas}
 	Por la claridad, y la manera de filtrar que realiza, consideramos que es mejor árbol el de la primera ejecución a pesar de que se confunde en algunas instancias, pero para interpretar el problema, consideramos que se obtiene una interpretación mejor que con la segunda ejecución. Las principales diferencias se encuentran en las ramas iniciales, al ser el primero un árbol con una raíz con mas de dos hijos, hay más claridad y orden en el árbol. 

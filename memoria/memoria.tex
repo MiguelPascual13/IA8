@@ -71,14 +71,51 @@
 Tal y como son los datos, hemos decidido que para aprovechar el potencial de los mismos, lo más lógico es plantear el problema de clasificar la aceptabilidad de los coches en función de los otros 6 atributos, ya que así podemos observar más adelante el poder del algunos atributos como la seguridad y el número de personas que ya clasifican una cantidad de los coches.
 
 Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad. 
-	METER HISTOGRAMA COMO IMAGEN, LA OBTENEMOS DE WEKA. 
+	\begin{figure}
+  		\centering
+   		\includegraphics[width=0.7\textwidth]{Imagenes/HistogramaVarSalidaClasif}
+  		\caption{Histograma de la variable tipo de coche según aceptabilidad}
+  		\label{HistoVarSalidaClasi}
+	\end{figure}
 	\section{Parametrización del J48}
 		Dado que todas nuestras variables son categóricas no se les puede normalizar (englobar los valores entre $0$ y $1$) ni estandarizar (modificar los datos para que tengan media $0$ y varianza $1$). 
 		Primero se realizará una ejecución del algoritmo sin validación ni entrenamiento, después se realizará otra ejecución en validación y entrenamiento al $66\%$.
 		
-		En la primera ejecución se han mantenido los parámetros del algoritmo predeterminado por Weka y en la segunda ejecución...
+		En la primera ejecución se han mantenido los parámetros del algoritmo predeterminado por Weka y en la segunda ejecución al realizar un entrenamiento y una validación al $66\%$, vimos que el árbol resultante era muy parecido al original sin entrenamiento ni validación, por tanto decidimos añadir una nueva peculiaridad a esta segunda ejecución y era que de manera forzada siempre se realizaran particiones binarias en el árbol, es decir que formara un árbol binario.
 	\section{Resultados}
-	AQUÍ HAY QUE PONER LOS ÁRBOLES DE DECISIÓN, LAS IMAGENES, QUE HABRA QUE VER COMO SACARLAS DE WEKA Y METERLAS.
+	Mostremos primero los resultados de la primera ejecución, primero mostramos el sumario de weka en la Figura \ref{SumarioPrimeraEjecucion}, en el que esta incluido los valores del recall, precisión los errores y la matriz de confusión; y después el árbol en la Figura \ref{ArbolPrimeraEjecucion}.
+	\begin{figure}
+  		\centering
+   		\includegraphics{Imagenes/SummarySinEntreNiVal}
+  		\caption{Sumario Primera Ejecución}
+  		\label{SumarioPrimeraEjecucion}
+	\end{figure}	
+	
+	\begin{figure}
+  		\centering
+   		\includegraphics[width=0.7\textwidth]{Imagenes/ArbolSinEntreNiVal}
+  		\caption{Árbol Primera Ejecución}
+  		\label{ArbolPrimeraEjecucion}
+	\end{figure}
+	
+	Mostraremos ahora los resultados de la segunda ejecución, primero mostramos el sumario de weka en la Figura \ref{SumarioSegundaEjecucion}, en el que esta incluido los valores del recall, precisión los errores y la matriz de confusión; y después el árbol en la Figura \ref{ArbolSegundaEjecucion}.
+	\begin{figure}
+  		\centering
+   		\includegraphics{Imagenes/SummaryConEntreYValYBinarySplit}
+  		\caption{Sumario Primera Ejecución}
+  		\label{SumarioSegundaEjecucion}
+	\end{figure}	
+	
+	\begin{figure}
+  		\centering
+   		\includegraphics[width=0.7\textwidth]{Imagenes/ArbolConEntreYValYBinarySplit}
+  		\caption{Árbol Primera Ejecución}
+  		\label{ArbolSegundaEjecucion}
+	\end{figure}
+	
+	Comentemos ahora los resultados obtenidos en ambas ejecuciones:
+	
+	
 	\section{Conclusiones y respuestas}
 	\chapter{Regresión}
 		\section{Descripción del conjunto}

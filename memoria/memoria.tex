@@ -34,7 +34,7 @@
 	
 	Para elegir el tipo de enlace que se usa en el algoritmo, hemos probado el algoritmo jerárquico con los $3$ posibles enlaces, simple, centrado y completo; y el enlace con el que los resultados del algoritmo salían homogéneos y dignos de estudiar, era con el enlace completo lo cual se debe a que los individuos del conjunto de datos pertenecientes a la misma clase, están muy alejados unos de otros.
 	
-	\section{Resultados, conclusiones y respuestas}
+	\section{Resultados y conclusiones}
 	Mostremos primero el sumario de weka en la Figura \ref{SumarioClustering}, y después los histogramas de weka en los que hemos añadido una variable llamada cluster, que nos permite observar como estan organizados los clusters a lo largo de todas las variables, (idea obtenida de las recomendaciones y tutoriales de la página de weka); en la Figura \ref{ClusteringHistogramas}.
 
 Comentemos ahora algunos detalles del sumario, se puede observar que el reparto de las instancias entre los clusters, es realmente equitativo, pues dos clusters tienen un $32\%$ de las instancias y el otro tiene el $36\%$ de las instancias, que hacen un total del $100\%$. Además solo se produce un error del $8\%$ en lo que consiste en la asignación de las instancias al correspondiente clusters, ya que observandolo en el sumario vemos que cada clusters corresponde con una tipo de semilla de trigo, el cluster $0$ corresponde con la semilla de tipo $1$, el cluster $1$ con la semilla de tipo $2$ y el cluster $2$ con la semilla de tipo $3$.
@@ -75,7 +75,7 @@ Además podemos observar que el cluster más homogéneo es el cluster $1$ pues s
   		\caption{Histogramas Clustering}
   		\label{ClusteringHistogramas}
 	\end{figure}
-	\chapter{Clasificación}
+\chapter{Clasificación}
 		\section{Descripción del conjunto}
 		Para este tipo de problema, lo interesante es coger un conjunto/database que tenga pocos atributos y muchas instancias, por ello el conjunto que hemos seleccionado es un dataset sobre una evaluación de coches, hemos obtenido los datos de la siguiente página \url{http://archive.ics.uci.edu/ml/datasets/Car+Evaluation}. Al igual que en el primer apartado, los archivos descargados no venían en formato .arff, por tanto hemos tenido que añadir parte del codigo de definición de atributos y de la relación, pero los datos no han sido modificados.
 		
@@ -95,11 +95,11 @@ Además podemos observar que el cluster más homogéneo es el cluster $1$ pues s
 
 Tal y como son los datos, hemos decidido que para aprovechar el potencial de los mismos, lo más lógico es plantear el problema de clasificar la aceptabilidad de los coches en función de los otros 6 atributos, para así poder observar cuales coches son inaceptables y asi no venderlos o comprarlos; ya que así podemos observar más adelante el poder del algunos atributos como la seguridad y el número de personas que ya clasifican una cantidad considerable de los coches.
 
-Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad. 
+Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad en la Figura \ref{HistoVarSalidaClasi}. 
 	\begin{figure}
   		\centering
    		\includegraphics[width=1\textwidth]{Imagenes/HistogramaVarSalidaClasif}
-  		\caption{Histograma de la variable tipo de coche según aceptabilidad}
+  		\caption{Histograma del tipo de coche según aceptabilidad}
   		\label{HistoVarSalidaClasi}
 	\end{figure}
 	\section{Parametrización del J48}
@@ -107,7 +107,7 @@ Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad.
 		Primero se realizará una ejecución del algoritmo sin validación ni entrenamiento, después se realizará otra ejecución en validación y entrenamiento al $66\%$.
 		
 		En la primera ejecución se han mantenido los parámetros del algoritmo predeterminado por Weka y en la segunda ejecución al realizar un entrenamiento y una validación al $66\%$, vimos que el árbol resultante era muy parecido al original sin entrenamiento ni validación, por tanto decidimos añadir una nueva peculiaridad a esta segunda ejecución y era que de manera forzada siempre se realizaran particiones binarias en el árbol, es decir que formara un árbol binario.
-	\section{Resultados}
+	\section{Resultados y conclusiones}
 	Mostremos primero los resultados de la primera ejecución, primero mostramos el sumario de weka en la Figura \ref{SumarioPrimeraEjecucion}, en el que esta incluido los valores del recall, precisión los errores y la matriz de confusión; y después el árbol en la Figura \ref{ArbolPrimeraEjecucion}.
 	\begin{figure}
   		\centering
@@ -146,7 +146,8 @@ Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad.
 	
 	En cambio, cabe destacar que a pesar de que la segunda ejecución presenta menos equivocación, la precisión que posee en los coches buenos, es menor que en la primera ejecución, a pesar de que la segunda tiene una precisión global mayor que en la primera ejecución, además de que la segunda parametrización posee una mayor sensibilidad a la hora de concretar en los tipos de coches según aceptabilidad y como es un valor alto y cercano a $1$, sabemos que la validación y ambas ejecuciones son fiables.
 	
-	\section{Conclusiones y respuestas}
+	Ahora respondamos a las preguntas planteadas.
+	
 	Por la claridad, y la manera de filtrar que realiza, consideramos que es mejor árbol el de la primera ejecución a pesar de que se confunde en algunas instancias, pero para interpretar el problema, consideramos que se obtiene una interpretación mejor que con la segunda ejecución. Las principales diferencias se encuentran en las ramas iniciales, al ser el primero un árbol con una raíz con mas de dos hijos, hay más claridad y orden en el árbol. 
 	
 	En cambio en términos de validación consideramos que el segundo árbol es más exacto y con mejores estadísticas que la primera ejecución.
@@ -161,10 +162,50 @@ Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad.
 	
 	Además a nuestro punto de vista, estas dos clases junto con la del tamaño del maletero, son las clases que menos información aportan, pues al final son las que clasifican entre los buenos coches, que si enfocamos este problema simplemente para descartar los coches peligrosos/inaceptables, dichas clases no nos darían información relevante.
 	
-	\chapter{Regresión}
-		\section{Descripción del conjunto}
-	\section{Parametrización del perceptrón multicapa}
-	\section{Parametrización del K-NN}
-	\section{Resultados}
-	\section{Conclusiones}
+\chapter{Regresión}
+	\section{Descripción del conjunto}
+	En el caso de la regresión, hemos decidido coger un conjunto de datos cuyas variables sean todas numéricas para así facilitar la ejecución y parametrización del algoritmo del perceptrón multicapa. 
+	
+	Por ello hemos seleccionado un conjunto de datos formado por la recopilado de información sobre la hidrodinámica de los yates según las dimensiones y de las velocidades de los mismos. 
+	Los datos los hemos obtenido de la siguiente página \url{http://archive.ics.uci.edu/ml/datasets/Yacht+Hydrodynamics}.
+	En este tercer caso, ocurrió lo mismo que en los anteriores y tuvimos que añadir la parte de los atributos y ponerlo en formato de archivo arff.
+	
+	Expliquemos ahora los atributos del problema, que en este caso, como hemos dicho antes, son todos numéricos:
+	
+	\begin{enumerate}
+\item LongPosCenter: posición longitudinal del centro de flotabilidad del yate,también llamado centro de carena (volumen sumergido del barco) que determina el centro de gravedad del volumen de agua desplazado por el yate, número real.
+\item PrismaticCoef:Coeficiente prismático o longitudinal, relación entre el volumen de la carena y el volumen de un prisma con unas medidas determinadas, número real.
+\item LengthDispRat: Relación longitud-desplazamiento, relaciona el peso del yate con la longitud de la linea donde el barco toca el agua, número real.
+\item BreamDraughtRat: relación entre la anchura del barco y el calado (altura entre la linea donde el barco toca el agua y la quilla, que es el elemento metalico ''triangular$"$ en la parte baja del barco), número real.
+\item LengthBeamRat: relación entre la longitud anterior, y la anchura del barco, número real.
+\item FroudeNumber: el número de Froude que indica el estado del flujo hidráulico del fluido en el que flota el barco, número real.
+\item ResiduaryResist: resistencia residual por unidad de peso de desplazamiento, número real.
+\end{enumerate}
+
+	El propio enlace nos proporciona ya cual debe ser nuestra variable de salida en el problema que hemos comentado y se trata de la última, la ,aquí presentamos el histograma con su distribución en la Figura \ref{HistoVarSalidaRegre}.
+	
+	\begin{figure}
+  		\centering
+   	\includegraphics[width=1\textwidth]{Imagenes/HistogramaVarSalidaRegre}
+  		\caption{Histograma de la resistencia residual.}
+  		\label{HistoVarSalidaRegre}
+	\end{figure}
+	\section{Parametrización del perceptrón multicapa y del K-NN}
+	Primero debemos analizar si las variables requieren de normalización o estandarización o simplemente dejarlas como están. Al probar con ambas opciones, normalizando y sin normalizar, sale con el algoritmo perceptrón multicapa los mismos resultados, por tanto hemos optado por no normalizar para así tener posibilidad de hacerlo con algún subconjunto de variables en la paramtrización de K-NN.
+	
+	Después, asignemos el número de partes, p, en las que se realizará la validación cruzada para el perceptrón multicapa. Hemos decidido que el más adecuado es $p=10$, a base de pruebas, hemos encontrado que el error es menor con $10$ que con algunos números menores y mayores a él.
+	
+	Comencemos ahora con el K-NN, primero determinemos el k, es decir el número de ''ejemplos$"$ que se recuperan. Ahora 
+	
+	\section{Resultados y conclusiones}
+	Mostremos ahora el sumario del algoritmo del perceptrón multicapa en la Figura \ref{SumarioPerceptron}, en él se puede observar los errores.
+	
+	Analicemos los errores,
+	\begin{figure}
+  		\centering
+   	\includegraphics{Imagenes/SumarioPerceptron}
+  		\caption{Sumario del algoritmo del perceptrón multicapa.}
+  		\label{SumarioPerceptron}
+	\end{figure}
+	 
 \end{document}

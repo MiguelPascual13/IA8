@@ -5,5 +5,5 @@ http://archive.ics.uci.edu/ml/datasets/seeds
 Conjunto de la Evaluacion de Coches para la clasificación
 http://archive.ics.uci.edu/ml/datasets/Car+Evaluation
 
-Conjunto de Yates
-http://archive.ics.uci.edu/ml/datasets/Yacht+Hydrodynamics
+Conjunto del Cemento
+http://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength

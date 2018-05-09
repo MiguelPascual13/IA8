@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.15)  9 MAY 2018 20:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.15)  10 MAY 2018 00:08
 entering extended mode
 **./memoria.tex
 (memoria.tex
@@ -2253,128 +2253,163 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 166.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 166.
-<Imagenes/HistogramaVarSalidaRegre.png, id=180, 577.55775pt x 220.4235pt>
-File: Imagenes/HistogramaVarSalidaRegre.png Graphic file (type png)
-<use Imagenes/HistogramaVarSalidaRegre.png>
-Package pdftex.def Info: Imagenes/HistogramaVarSalidaRegre.png  used on input l
-ine 189.
-(pdftex.def)             Requested size: 426.79135pt x 162.88884pt.
+<Imagenes/HistogramaVarSalRegre.png, id=180, 578.76225pt x 221.628pt>
+File: Imagenes/HistogramaVarSalRegre.png Graphic file (type png)
+<use Imagenes/HistogramaVarSalRegre.png>
+Package pdftex.def Info: Imagenes/HistogramaVarSalRegre.png  used on input line
+ 192.
+(pdftex.def)             Requested size: 426.79135pt x 163.434pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 193.
+(babel)             in language  on input line 196.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 193.
+(babel)             in language  on input line 196.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 193.
+(babel)             in language  on input line 196.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 193.
+(babel)             in language  on input line 196.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 193.
+(babel)             in language  on input line 196.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 193.
+(babel)             in language  on input line 196.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 198.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 198.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 198.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 198.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 198.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 198.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 198.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 198.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 198.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 198.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 198.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 198.
  [10
 
 ]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 200.
+(babel)             in language  on input line 203.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 200.
+(babel)             in language  on input line 203.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 200.
+(babel)             in language  on input line 203.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 200.
+(babel)             in language  on input line 203.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 200.
+(babel)             in language  on input line 203.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 200.
-<Imagenes/SumarioPerceptron.png, id=195, 250.536pt x 114.4275pt>
+(babel)             in language  on input line 203.
+<Imagenes/SumarioPerceptron.png, id=197, 238.491pt x 105.39375pt>
 File: Imagenes/SumarioPerceptron.png Graphic file (type png)
 <use Imagenes/SumarioPerceptron.png>
-Package pdftex.def Info: Imagenes/SumarioPerceptron.png  used on input line 206
+Package pdftex.def Info: Imagenes/SumarioPerceptron.png  used on input line 209
 .
-(pdftex.def)             Requested size: 250.53537pt x 114.42722pt.
+(pdftex.def)             Requested size: 238.4904pt x 105.39348pt.
+<Imagenes/SumarioKNN.png, id=199, 233.07076pt x 109.00725pt>
+File: Imagenes/SumarioKNN.png Graphic file (type png)
+<use Imagenes/SumarioKNN.png>
+Package pdftex.def Info: Imagenes/SumarioKNN.png  used on input line 216.
+(pdftex.def)             Requested size: 233.07018pt x 109.00697pt.
 
 
 Class memoir Warning: The material used in the headers is too large
 (14.4521pt) for the given head height (13.6pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 211.
+(in both cases you will find help in the memoir manual). on input line 221.
 
-LaTeX Info: Redefining \. on input line 211.
-LaTeX Info: Redefining \% on input line 211.
+LaTeX Info: Redefining \. on input line 221.
+LaTeX Info: Redefining \% on input line 221.
 
 Overfull \vbox (0.8521pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 211.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 211.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 211.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 211.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 211.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 211.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 211.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 211.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 211.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 211.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 211.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 211.
+(babel)             in language  on input line 221.
 
-[11 <./Imagenes/HistogramaVarSalidaRegre.png> <./Imagenes/SumarioPerceptron.png
->]
+[11 <./Imagenes/HistogramaVarSalRegre.png> <./Imagenes/SumarioPerceptron.png>]
+LaTeX Info: Redefining \. on input line 221.
+LaTeX Info: Redefining \% on input line 221.
+
+Overfull \vbox (0.8521pt too high) has occurred while \output is active []
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 221.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 221.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 221.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 221.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 221.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 221.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 221.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 221.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 221.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 221.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 221.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 221.
+
+[12 <./Imagenes/SumarioKNN.png>]
 \tf@toc=\write9
 \openout9 = `memoria.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 211.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 211.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 221.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 221.
  (memoria.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 211.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 211.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 221.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 221.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
 (rerunfilecheck)             Checksum: 9638307973F74E4458050C7D90E05038;916.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 211.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 221.
  ) 
 Here is how much of TeX's memory you used:
- 36436 strings out of 493305
- 778903 string characters out of 3138871
- 1085667 words of memory out of 3000000
- 39243 multiletter control sequences out of 15000+200000
+ 36446 strings out of 493305
+ 779056 string characters out of 3138871
+ 1085665 words of memory out of 3000000
+ 39248 multiletter control sequences out of 15000+200000
  20712 words of font info for 91 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,12n,138p,3221b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2389,9 +2424,9 @@ msfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on memoria.pdf (11 pages, 323790 bytes).
+Output written on memoria.pdf (12 pages, 331672 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
- 162 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 266 PDF objects out of 1000 (max. 8388607)
+ 60 named destinations out of 1000 (max. 500000)
+ 167 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -166,46 +166,56 @@ Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad 
 	\section{Descripción del conjunto}
 	En el caso de la regresión, hemos decidido coger un conjunto de datos cuyas variables sean todas numéricas para así facilitar la ejecución y parametrización del algoritmo del perceptrón multicapa. 
 	
-	Por ello hemos seleccionado un conjunto de datos formado por la recopilado de información sobre la hidrodinámica de los yates según las dimensiones y de las velocidades de los mismos. 
-	Los datos los hemos obtenido de la siguiente página \url{http://archive.ics.uci.edu/ml/datasets/Yacht+Hydrodynamics}.
+	Por ello hemos seleccionado un conjunto de datos formado por los caracteristicas que determinan la resistencia del cemento, ya que todos los datos son numéricos.
+	Los datos los hemos obtenido de la siguiente página \url{http://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength}.
+	
 	En este tercer caso, ocurrió lo mismo que en los anteriores y tuvimos que añadir la parte de los atributos y ponerlo en formato de archivo arff.
 	
 	Expliquemos ahora los atributos del problema, que en este caso, como hemos dicho antes, son todos numéricos:
-	
+	RELLENAR ESTO DE AQUI
 	\begin{enumerate}
-\item LongPosCenter: posición longitudinal del centro de flotabilidad del yate,también llamado centro de carena (volumen sumergido del barco) que determina el centro de gravedad del volumen de agua desplazado por el yate, número real.
-\item PrismaticCoef:Coeficiente prismático o longitudinal, relación entre el volumen de la carena y el volumen de un prisma con unas medidas determinadas, número real.
-\item LengthDispRat: Relación longitud-desplazamiento, relaciona el peso del yate con la longitud de la linea donde el barco toca el agua, número real.
-\item BreamDraughtRat: relación entre la anchura del barco y el calado (altura entre la linea donde el barco toca el agua y la quilla, que es el elemento metalico ''triangular$"$ en la parte baja del barco), número real.
-\item LengthBeamRat: relación entre la longitud anterior, y la anchura del barco, número real.
-\item FroudeNumber: el número de Froude que indica el estado del flujo hidráulico del fluido en el que flota el barco, número real.
-\item ResiduaryResist: resistencia residual por unidad de peso de desplazamiento, número real.
+\item CementQuantity:, número real.
+\item BlastFurnaceSlagQuant:, número real.
+\item FlyAshQuant:, número real.
+\item WaterAmount:, número real.
+\item SuperplasticizerAmount:, número real.
+\item CoarseAggregateQuant:, número real.
+\item FineAggregateQuant:, número real.
+\item Age:, número real.
+\item ConcreteCompressiveStrength:, número real.
 \end{enumerate}
 
 	El propio enlace nos proporciona ya cual debe ser nuestra variable de salida en el problema que hemos comentado y se trata de la última, la ,aquí presentamos el histograma con su distribución en la Figura \ref{HistoVarSalidaRegre}.
 	
 	\begin{figure}
   		\centering
-   	\includegraphics[width=1\textwidth]{Imagenes/HistogramaVarSalidaRegre}
-  		\caption{Histograma de la resistencia residual.}
+   	\includegraphics[width=1\textwidth]{Imagenes/HistogramaVarSalRegre}
+  		\caption{Histograma de la .}
   		\label{HistoVarSalidaRegre}
 	\end{figure}
 	\section{Parametrización del perceptrón multicapa y del K-NN}
 	Primero debemos analizar si las variables requieren de normalización o estandarización o simplemente dejarlas como están. Al probar con ambas opciones, normalizando y sin normalizar, sale con el algoritmo perceptrón multicapa los mismos resultados, por tanto hemos optado por no normalizar para así tener posibilidad de hacerlo con algún subconjunto de variables en la paramtrización de K-NN.
 	
-	Después, asignemos el número de partes, p, en las que se realizará la validación cruzada para el perceptrón multicapa. Hemos decidido que el más adecuado es $p=10$, a base de pruebas, hemos encontrado que el error es menor con $10$ que con algunos números menores y mayores a él.
+	Después, asignemos el número de partes, $p$, en las que se realizará la validación cruzada para el perceptrón multicapa y para el K-NN, sabiendo que puede producirse un cambio con respecto al $p$ en el K-NN. Hemos decidido que el más adecuado es $p=20$, ya que a base de pruebas, hemos encontrado que el error es menor con $20$ que con algunos números menores y mayores a él.
 	
-	Comencemos ahora con el K-NN, primero determinemos el k, es decir el número de ''ejemplos$"$ que se recuperan. Ahora 
+	EXPLICACION DE LA PARAMETRIZACION
 	
 	\section{Resultados y conclusiones}
 	Mostremos ahora el sumario del algoritmo del perceptrón multicapa en la Figura \ref{SumarioPerceptron}, en él se puede observar los errores.
 	
-	Analicemos los errores,
+	Analicemos los errores, LOS ERRORES DEL PERCEPTON MULTICAPA.
 	\begin{figure}
   		\centering
    	\includegraphics{Imagenes/SumarioPerceptron}
   		\caption{Sumario del algoritmo del perceptrón multicapa.}
   		\label{SumarioPerceptron}
 	\end{figure}
+	Mostremos ahora el sumario del algoritmo K-NN en la Figura \ref{SumarioKNN}, en él se pueden observar unos errores realmente parecidos a los del anterior sumario.	 
+	\begin{figure}
+  		\centering
+   	\includegraphics{Imagenes/SumarioKNN}
+  		\caption{Sumario del algoritmo K-NN.}
+  		\label{SumarioKNN}
+	\end{figure}	 
 	 
 \end{document}

@@ -174,15 +174,15 @@ Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad 
 	Expliquemos ahora los atributos del problema, que en este caso, como hemos dicho antes, son todos numéricos:
 	RELLENAR ESTO DE AQUI
 	\begin{enumerate}
-\item CementQuantity:, número real.
-\item BlastFurnaceSlagQuant:, número real.
-\item FlyAshQuant:, número real.
-\item WaterAmount:, número real.
-\item SuperplasticizerAmount:, número real.
-\item CoarseAggregateQuant:, número real.
-\item FineAggregateQuant:, número real.
-\item Age:, número real.
-\item ConcreteCompressiveStrength:, número real.
+\item CementQuantity: cantidad de cemento, número real.
+\item BlastFurnaceSlagQuant: cantidad escoria de alto horno, conglomerado que se desprende de la fusión de hierro en un alto horno, número real.
+\item FlyAshQuant: cantidad de ceniza voladora, producto que surge de la combustión del carbón, número real.
+\item WaterAmount: cantidad de agua, número real.
+\item SuperplasticizerAmount: cantidad de superplastificante, aditivo que reduce el contedido en agua del determinado hormigón, número real.
+\item CoarseAggregateQuant: cantidad de grava fina, número real.
+\item FineAggregateQuant: cantidad de gravilla, número real.
+\item Age: edad del cemento, número real.
+\item ConcreteCompressiveStrength: resistencia de la compresión del cemento, número real.
 \end{enumerate}
 
 	El propio enlace nos proporciona ya cual debe ser nuestra variable de salida en el problema que hemos comentado y se trata de la última, la ,aquí presentamos el histograma con su distribución en la Figura \ref{HistoVarSalidaRegre}.
@@ -194,23 +194,25 @@ Mostramos aquí el histograma de la variable tipo de coche según aceptabilidad 
   		\label{HistoVarSalidaRegre}
 	\end{figure}
 	\section{Parametrización del perceptrón multicapa y del K-NN}
-	Primero debemos analizar si las variables requieren de normalización o estandarización o simplemente dejarlas como están. Al probar con ambas opciones, normalizando y sin normalizar, sale con el algoritmo perceptrón multicapa los mismos resultados, por tanto hemos optado por no normalizar para así tener posibilidad de hacerlo con algún subconjunto de variables en la paramtrización de K-NN.
+	Primero debemos analizar si las variables requieren de normalización o estandarización o simplemente dejarlas como están. Al probar con ambas opciones, normalizando y sin normalizar, sale con el algoritmo perceptrón multicapa los mismos resultados, por tanto hemos optado por no normalizar para así tener posibilidad de hacerlo con algún subconjunto de variables en la paramtrización de K-NN, en cambio si hemos optado por estandarizar los valores para así disminuir un poco los errores que se comenten.
 	
 	Después, asignemos el número de partes, $p$, en las que se realizará la validación cruzada para el perceptrón multicapa y para el K-NN, sabiendo que puede producirse un cambio con respecto al $p$ en el K-NN. Hemos decidido que el más adecuado es $p=20$, ya que a base de pruebas, hemos encontrado que el error es menor con $20$ que con algunos números menores y mayores a él.
 	
-	EXPLICACION DE LA PARAMETRIZACION
+	El perceptrón multicapa no tiene ninguna parametrización más, en cambio en el caso del K-NN, hay que determinar el valor de $k$, que en este caso para encontrar un error inferior o parecido al error que te proporciona el perceptrón multicapa, se ha tenido que tomar el valor $k=1$, pues además si se aumentaba el $k$, el error aumentaba, lo cual eso no nos beneficiaba.
 	
 	\section{Resultados y conclusiones}
 	Mostremos ahora el sumario del algoritmo del perceptrón multicapa en la Figura \ref{SumarioPerceptron}, en él se puede observar los errores.
 	
-	Analicemos los errores, LOS ERRORES DEL PERCEPTON MULTICAPA.
+	Analicemos los errores, en el sumario, es fácil ver, que con este conjunto el error tanto la media del error absoluto como el de la raíz cuadrada de la raíz, son errores altos para este conjunto, al igual que se ve también en los errores relativos que tiene un porcentaje de $48\%$ y de $50\%$.
 	\begin{figure}
   		\centering
    	\includegraphics{Imagenes/SumarioPerceptron}
   		\caption{Sumario del algoritmo del perceptrón multicapa.}
   		\label{SumarioPerceptron}
 	\end{figure}
-	Mostremos ahora el sumario del algoritmo K-NN en la Figura \ref{SumarioKNN}, en él se pueden observar unos errores realmente parecidos a los del anterior sumario.	 
+\\	\\
+	Mostremos ahora el sumario del algoritmo K-NN en la Figura \ref{SumarioKNN}, en él se pueden observar unos errores realmente parecidos a los del anterior sumario. En este caso se observa que en la media del error absoluto se obtiene un valor algo menor pero también sigue siendo un error alto, en cambio en la raíz cuadrada de la raíz se obtiene un error mayor, lo que indica que los valores más fuertes pesan que los mas pequeños y hace que el error suba con respecto al perceptrón multicapa.  	 
+	
 	\begin{figure}
   		\centering
    	\includegraphics{Imagenes/SumarioKNN}
